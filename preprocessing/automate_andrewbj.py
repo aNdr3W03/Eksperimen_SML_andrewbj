@@ -29,8 +29,8 @@ def remove_outliers(df, numerical_cols):
 
 def preprocess_data(input_path, output_path):
     """
-    Preprocesses the patient dataset by cleaning, encoding, removing outliers,
-    and handling class imbalance using SMOTEENN. Saves the processed data to a CSV file.
+    Preprocesses the patient dataset by cleaning, encoding, removing outliers, and
+    handling class imbalance using SMOTEENN. Saves the processed data to a CSV file.
 
     Parameters:
     - input_path (str): Path to the input CSV file.
@@ -139,3 +139,9 @@ def preprocess_data(input_path, output_path):
     preproc_data.info()
 
     return X_train, X_test, y_train, y_test
+
+if __name__ == "__main__":
+    X_train, X_test, y_train, y_test = preprocess_data(
+        input_path='diabetes_dataset_with_notes.csv',
+        output_path='preprocessing/diabetes_processed.csv'
+    )
